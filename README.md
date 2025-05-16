@@ -3,4 +3,4 @@
 ---
 ![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=bytedothash&show_icons=true)
 ---
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bytedothash&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bytedothash&layout=compact&theme=vision-friendly-dark)](https://github.com/bytedothash/github-readme-stats)
