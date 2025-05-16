@@ -1,7 +1,12 @@
-### Hi there 👋
-# It's Byte Dot Hash! 
-![Profile View Counter](https://komarev.com/ghpvc/?username=bytedothash)
----
-![Your Repository's Stats](https://github-readme-stats.vercel.app/api?username=bytedothash&show_icons=true)
----
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bytedothash&layout=compact&theme=vision-friendly-dark)](https://github.com/bytedothash/github-readme-stats)
+[![MasterHead](https://raw.githubusercontent.com/bytedothash/bytedothash/refs/heads/main/bytedothash/banner.png)](https://bytedothash.netlify.app)
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+
+</p>
+
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=bytedothash&show_icons=true&locale=en&layout=compact" alt="bytedothash" /></p>
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=bytedothash&show_icons=true&locale=en" alt="bytedothash" /></p>
+
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=bytedothash&" alt="bytedothash" /></p>
