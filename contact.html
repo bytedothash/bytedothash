@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .contact-container {
+      max-width: 440px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 32px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.08);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      color: #222;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    button {
+      background: #2d72d9;
+      color: #fff;
+      border: none;
+      padding: 12px 0;
+      width: 100%;
+      border-radius: 6px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1959a8;
+    }
+    .note {
+      text-align: center;
+      color: #888;
+      font-size: 0.9em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <form action="mailto:bytedothash@users.noreply.github.com" method="POST" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="Name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="note">
+      Messages will be sent to my GitHub-associated email:<br>
+      <b>bytedothash@users.noreply.github.com</b><br>
+      (If you want a direct reply, please include your real email in the form.)
+    </div>
+  </div>
+</body>
+</html>
