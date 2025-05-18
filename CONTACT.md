@@ -13,7 +13,7 @@ Follow or message me on Twitter/X:
 ---
 ## 🌐 Website/Portfolio
 Learn more about my work and background:  
-[https://bytedothash.github.io/bytedothash](https://bytedothash.github.io/bytedothash)
+[https://bytedothash.netlify.app](https://bytedothash.netlify.app)
 ---
 ## 💬 GitHub Issues & Discussions
 For project-specific questions, suggestions, or bug reports, please open an  
