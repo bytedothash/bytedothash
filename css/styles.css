@@ -1,0 +1,265 @@
+/* Theme Variables (exact match to CodePen) */
+:root {
+    --background: #121212; /* Darker background for particle effect */
+    --text: #ffffff; /* White text */
+    --primary: #2e2e2e; /* Sidebar background (dark) */
+    --secondary: #9e9e9e; /* Secondary text (gray) */
+    --orange: #ff5722;
+    --teal: #26a69a;
+    --yellow: #ffca28;
+    --pink: #ec407a;
+}
+
+[data-theme="light"] {
+    --background: #f5f5f5; /* Light background */
+    --text: #212121; /* Dark text */
+    --primary: #e0e0e0; /* Sidebar background (light) */
+    --secondary: #757575; /* Secondary text (gray) */
+}
+
+/* Apply theme variables */
+body, html {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    background-color: var(--primary);
+    transition: background-color 0.3s ease;
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-text {
+    color: var(--text);
+}
+
+/* Metro tile styling */
+.metro-tile {
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.metro-tile.bg-orange {
+    background-color: var(--orange);
+}
+
+.metro-tile.bg-teal {
+    background-color: var(--teal);
+}
+
+.metro-tile.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.metro-tile.bg-pink {
+    background-color: var(--pink);
+}
+
+/* Windows 10-style animation on hover */
+.metro-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2), 0 0 8px rgba(255, 255, 255, 0.3); /* Glow effect */
+}
+
+/* Animate tile content (icon and text) */
+.tile-icon, .tile-text {
+    transition: transform 0.3s ease-in-out;
+}
+
+.metro-tile:hover .tile-icon,
+.metro-tile:hover .tile-text {
+    transform: translateY(-3px); /* Subtle upward shift for "live tile" effect */
+}
+
+/* Profile image animations */
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hover\:shadow-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.5); /* Orange glow to match border */
+}
+
+/* Typewriter and Marquee/Slide animation for "Byte Hash" text */
+.animate-typewriter-slide {
+    display: inline-block;
+    opacity: 0;
+    animation: typewriter 0.2s steps(1) forwards, slide 1s ease-in-out infinite;
+    animation-delay: calc(var(--index) * 0.2s);
+}
+
+@keyframes typewriter {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide {
+    0%, 50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Sidebar logo animation */
+.animate-logo {
+    display: inline-block;
+    animation: rotate-scale-glow 4s ease-in-out infinite;
+}
+
+@keyframes rotate-scale-glow {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Sidebar navigation animations */
+.animate-slide-in {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slide-in 0.5s ease-out forwards;
+    animation-delay: var(--delay);
+}
+
+@keyframes slide-in {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-link:hover .nav-icon,
+#theme-toggle:hover .nav-icon {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Sidebar styling */
+nav {
+    width: 80px;
+}
+
+.nav-link span {
+    display: block;
+    text-align: center;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+/* Section styling with slide transition */
+.section {
+    display: none;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.section.active {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Typography (match CodePen) */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p, span {
+    font-size: 1rem;
+}
+
+.metro-tile h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.metro-tile p, .metro-tile span {
+    font-size: 1rem;
+}
+
+/* Responsive adjustments (match CodePen) */
+@media (max-width: 640px) {
+    nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        bottom: 0;
+        top: auto;
+    }
+    main {
+        margin-left: 0 !important;
+        padding-bottom: 80px;
+    }
+    .nav-link span, #theme-toggle span {
+        font-size: 0.5rem;
+    }
+    .grid {
+        gap: 0.5rem;
+    }
+    .metro-tile {
+        padding: 1rem !important;
+    }
+    img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
+    .metro-tile h3 {
+        font-size: 1rem;
+    }
+    .metro-tile p, .metro-tile span {
+        font-size: 0.875rem;
+    }
+    .section {
+        padding: 1rem !important;
+    }
+}

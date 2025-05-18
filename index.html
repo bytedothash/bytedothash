@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Hash! Let the world to introduce me by DOT</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Feather Icons CDN -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body class="bg-background text-text font-sans overflow-hidden transition-colors duration-300 relative">
+    <!-- Background Animation Canvas -->
+    <canvas id="background-canvas" class="absolute inset-0 z-0"></canvas>
+
+    <!-- Sidebar Navigation -->
+    <nav class="fixed top-0 left-0 h-full w-20 bg-primary flex flex-col py-6 z-10">
+        <div class="text-2xl font-bold text-text text-center animate-logo">Byte Hash</div>
+        <div class="flex-1 flex items-center justify-center">
+            <div class="flex flex-col items-center space-y-6">
+                <a href="#profile" class="nav-link flex flex-col items-center text-secondary hover:text-text animate-slide-in" style="--delay: 0.2s;">
+                    <i data-feather="user" class="w-6 h-6 nav-icon"></i>
+                    <span class="text-xs mt-1">PROFILE</span>
+                </a>
+                <a href="#projects" class="nav-link flex flex-col items-center text-secondary hover:text-text animate-slide-in" style="--delay: 0.4s;">
+                    <i data-feather="code" class="w-6 h-6 nav-icon"></i>
+                    <span class="text-xs mt-1">PROJECTS</span>
+                </a>
+                <a href="#skills" class="nav-link flex flex-col items-center text-secondary hover:text-text animate-slide-in" style="--delay: 0.6s;">
+                    <i data-feather="settings" class="w-6 h-6 nav-icon"></i>
+                    <span class="text-xs mt-1">SKILLS</span>
+                </a>
+            </div>
+        </div>
+        <button id="theme-toggle" class="flex flex-col items-center text-secondary hover:text-text animate-slide-in" style="--delay: 0.8s;">
+            <i id="theme-icon" data-feather="moon" class="w-6 h-6 nav-icon"></i>
+            <span class="text-xs mt-1">THEME</span>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="ml-20 h-screen overflow-hidden flex items-center justify-center relative z-10">
+        <!-- Profile Section -->
+        <section id="profile" class="section h-full w-full max-w-4xl flex items-center justify-center p-6">
+            <div class="text-center">
+                <div class="relative w-32 h-32 mx-auto mb-4 animate-float">
+                    <img src="./img/bytedothash.png" alt="Byte Hash Photo" class="w-full h-full rounded-full object-cover">
+                    <div class="absolute inset-0 rounded-full border-4 border-orange transition-transform duration-300 hover:scale-110 hover:shadow-glow"></div>
+                </div>
+                <h1 class="text-2xl font-bold">
+                    <span class="animate-typewriter-slide" style="--index: 0;">B</span>
+                    <span class="animate-typewriter-slide" style="--index: 1;">y</span>
+                    <span class="animate-typewriter-slide" style="--index: 2;">t</span>
+                    <span class="animate-typewriter-slide" style="--index: 3;">e</span>
+                    <span class="animate-typewriter-slide" style="--index: 4;"> </span>
+                    <span class="animate-typewriter-slide" style="--index: 5;">H</span>
+                    <span class="animate-typewriter-slide" style="--index: 6;">a</span>
+                    <span class="animate-typewriter-slide" style="--index: 7;">s</span>
+                    <span class="animate-typewriter-slide" style="--index: 8;">h</span>
+                </h1>
+                <p class="text-secondary mb-6 text-base">yourname@web3mail.com</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-md mx-auto">
+                    <a href="https://yourwebsite.com" class="metro-tile bg-orange p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="globe" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <span class="text-sm tile-text">WEBSITE</span>
+                    </a>
+                    <a href="#" class="metro-tile bg-teal p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="share-2" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <span class="text-sm tile-text">SHARE</span>
+                    </a>
+                    <a href="#" class="metro-tile bg-yellow p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="user-plus" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <span class="text-sm tile-text">FOLLOW</span>
+                    </a>
+                    <a href="#contact" class="metro-tile bg-pink p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="briefcase" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <span class="text-sm tile-text">HIRE</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section h-full w-full max-w-4xl flex items-center justify-center p-6">
+            <div class="text-center w-full">
+                <h2 class="text-2xl font-bold mb-6">Web3 Projects</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                    <div class="metro-tile bg-teal p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="image" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <h3 class="text-xl font-semibold tile-text">NFT Marketplace</h3>
+                        <p class="text-base tile-text">A platform for minting and trading NFTs</p>
+                    </div>
+                    <div class="metro-tile bg-yellow p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="dollar-sign" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <h3 class="text-xl font-semibold tile-text">DeFi Yield Farming</h3>
+                        <p class="text-base tile-text">A yield farming protocol on Polygon</p>
+                    </div>
+                    <div class="metro-tile bg-pink p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="server" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <h3 class="text-xl font-semibold tile-text">DAO Governance</h3>
+                        <p class="text-base tile-text">A DAO for community-driven decisions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section h-full w-full max-w-4xl flex items-center justify-center p-6">
+            <div class="text-center w-full">
+                <h2 class="text-2xl font-bold mb-6">Web3 Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                    <div class="metro-tile bg-pink p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="code" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <h3 class="text-xl font-semibold tile-text">Solidity</h3>
+                        <p class="text-base tile-text">Smart contract development</p>
+                    </div>
+                    <div class="metro-tile bg-orange p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="database" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <h3 class="text-xl font-semibold tile-text">IPFS</h3>
+                        <p class="text-base tile-text">Decentralized storage solutions</p>
+                    </div>
+                    <div class="metro-tile bg-yellow p-4 rounded-lg flex flex-col items-center justify-center transition-all duration-300">
+                        <i data-feather="package" class="w-6 h-6 mb-2 tile-icon"></i>
+                        <h3 class="text-xl font-semibold tile-text">Truffle</h3>
+                        <p class="text-base tile-text">Development framework for dApps</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
