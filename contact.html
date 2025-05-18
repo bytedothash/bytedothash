@@ -2,66 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me</title>
   <style>
+    :root {
+      --primary-color: #204080;
+      --primary-hover: #3357b7;
+      --input-bg: #f8fafc;
+      --container-bg: #fff;
+      --border-color: #bfc9d1;
+      --shadow: 0 4px 24px rgba(30,34,90,.09);
+    }
     body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f8;
       margin: 0;
       padding: 0;
     }
     .contact-container {
-      max-width: 440px;
+      max-width: 420px;
       margin: 60px auto;
-      background: #fff;
-      padding: 32px 24px;
-      border-radius: 10px;
-      box-shadow: 0 2px 16px rgba(0,0,0,.08);
+      background: var(--container-bg);
+      padding: 36px 28px 28px 28px;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.2s;
     }
     h2 {
       text-align: center;
-      margin-bottom: 24px;
-      color: #222;
+      margin-bottom: 28px;
+      color: var(--primary-color);
+      letter-spacing: 1px;
+      font-size: 2.1em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
     label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
+      font-weight: 600;
+      color: #33415c;
+      margin-bottom: 3px;
+      font-size: 1em;
     }
     input, textarea {
-      width: 100%;
-      padding: 10px 12px;
-      margin-bottom: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 6px;
       font-size: 1em;
-      box-sizing: border-box;
+      padding: 13px 12px;
+      background: var(--input-bg);
+      transition: border-color 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--primary-color);
+      background: #fff;
+      outline: none;
     }
     textarea {
-      min-height: 100px;
+      min-height: 110px;
       resize: vertical;
     }
     button {
-      background: #2d72d9;
+      background: var(--primary-color);
       color: #fff;
       border: none;
-      padding: 12px 0;
-      width: 100%;
+      padding: 15px 0;
       border-radius: 6px;
       font-size: 1.1em;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: background .2s, transform .1s;
+      margin-top: 5px;
     }
-    button:hover {
-      background: #1959a8;
+    button:hover, button:focus {
+      background: var(--primary-hover);
+      transform: translateY(-2px) scale(1.01);
     }
-    .note {
+    .note, .privacy {
       text-align: center;
-      color: #888;
-      font-size: 0.9em;
+      color: #8d99ae;
+      font-size: 0.97em;
+      margin-top: 18px;
+      line-height: 1.5;
+    }
+    .privacy {
+      font-size: 0.93em;
+      margin-top: 10px;
+    }
+    .email-info {
+      text-align: center;
       margin-top: 20px;
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.08em;
+      word-break: break-all;
+    }
+    @media (max-width: 600px) {
+      .contact-container {
+        max-width: 98vw;
+        margin: 30px 1vw;
+        padding: 19px 6vw 20px 6vw;
+        border-radius: 7px;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
+      .email-info {
+        font-size: 1em;
+      }
+    }
+    /* Custom styling for the email input */
+    .email-group {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .email-group input {
+      padding-right: 36px;
+    }
+    .email-group::before {
+      content: "@";
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary-color);
+      font-weight: 700;
+      pointer-events: none;
+      font-size: 1.17em;
+      opacity: 0.18;
     }
   </style>
 </head>
@@ -69,21 +140,27 @@
   <div class="contact-container">
     <h2>Contact Me</h2>
     <form action="mailto:bytedothash@users.noreply.github.com" method="POST" enctype="text/plain">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="Name" required>
-
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="Name" placeholder="Your name" autocomplete="name" required>
       <label for="email">Your Email</label>
-      <input type="email" id="email" name="Email" required>
-
+      <div class="email-group">
+        <input type="email" id="email" name="Email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="Subject" placeholder="Subject" autocomplete="off" required>
       <label for="message">Message</label>
-      <textarea id="message" name="Message" required></textarea>
-
+      <textarea id="message" name="Message" placeholder="Write your message here..." required></textarea>
       <button type="submit">Send Message</button>
     </form>
     <div class="note">
-      Messages will be sent to my GitHub-associated email:<br>
-      <b>bytedothash@users.noreply.github.com</b><br>
-      (If you want a direct reply, please include your real email in the form.)
+      This form will open your default email client to send the message.<br>
+      For urgent inquiries, you may contact me directly via email.
+    </div>
+    <div class="email-info">
+      Email: bytedothash@users.noreply.github.com
+    </div>
+    <div class="privacy">
+      <b>Privacy Notice:</b> Your information will only be used to respond to your inquiry and will not be shared.
     </div>
   </div>
 </body>
