@@ -127,7 +127,7 @@ nav {
 /* Sidebar logo animation */
 .animate-logo {
     display: inline-block;
-    animation: rotate-scale-glow 4s ease-in-out infinite;
+    animation: typewriter 0.2s steps(1) forwards, slide 1s ease-in-out infinite;
 }
 
 @keyframes rotate-scale-glow {
