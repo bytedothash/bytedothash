@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Me</title>
   <style>
     :root {
@@ -137,31 +137,28 @@
   </style>
 </head>
 <body>
-  <div class="contact-container">
-    <h2>Contact Me</h2>
-    <form action="mailto:bytedothash@users.noreply.github.com" method="POST" enctype="text/plain">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="Name" placeholder="Your name" autocomplete="name" required>
-      <label for="email">Your Email</label>
-      <div class="email-group">
-        <input type="email" id="email" name="Email" placeholder="you@example.com" autocomplete="email" required>
-      </div>
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" name="Subject" placeholder="Subject" autocomplete="off" required>
-      <label for="message">Message</label>
-      <textarea id="message" name="Message" placeholder="Write your message here..." required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <div class="note">
-      This form will open your default email client to send the message.<br>
-      For urgent inquiries, you may contact me directly via email.
-    </div>
-    <div class="email-info">
-      Email: bytedothash@users.noreply.github.com
-    </div>
-    <div class="privacy">
-      <b>Privacy Notice:</b> Your information will only be used to respond to your inquiry and will not be shared.
-    </div>
+<div class="contact-container">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/meognddp" method="POST" autocomplete="on">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name"/>
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email"/>
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="Subject" required autocomplete="off"/>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+  <div class="note">
+    Your message will be sent securely. For urgent inquiries, you may contact me directly via email.
   </div>
+  <div class="email-info">
+    Email: bytedothash@users.noreply.github.com
+  </div>
+  <div class="privacy">
+    <b>Privacy Notice:</b> Your information will only be used to respond to your inquiry and will not be shared.
+  </div>
+</div>
 </body>
 </html>
